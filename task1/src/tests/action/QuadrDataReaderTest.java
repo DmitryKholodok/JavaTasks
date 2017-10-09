@@ -14,7 +14,8 @@ import java.util.List;
 
 public class QuadrDataReaderTest {
 
-    private static final String FILE_NAME = "src/files/param";
+    private final String FILE_NAME = "src/files/param";
+    private final String wrongName = "Wrong name";
     private final DataReader dataReader = new QuadrDataReader();
     private List<Quadrilateral> listQuadr = new ArrayList<>();
 
@@ -52,7 +53,6 @@ public class QuadrDataReaderTest {
 
     @Test(expectedExceptions = IOException.class)
     public void testIOExcetion() throws IOException {
-        final String wrongName = "Wrong name";
         dataReader.read(wrongName);
     }
 

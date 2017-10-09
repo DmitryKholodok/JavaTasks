@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class PointValidatorTest {
 
-    final PointValidator pointValidator = new PointValidator();
+    private final PointValidator pointValidator = new PointValidator();
 
     @Test
     public void testGoodCase() throws ParamCountException {
