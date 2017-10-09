@@ -15,7 +15,7 @@ import java.util.List;
 public class QuadrDataReaderTest {
 
     private static final String FILE_NAME = "src/files/param";
-    private DataReader dataReader = new QuadrDataReader();
+    private final DataReader dataReader = new QuadrDataReader();
     private List<Quadrilateral> listQuadr = new ArrayList<>();
 
     @BeforeClass

@@ -30,7 +30,8 @@ public class Quadrilateral extends Shape {
 
         if (this == obj) return true;
         if (obj == null) return false;
-        // BACK!!!!
+        if (getClass() != obj.getClass()) return false;
+
         Point[] points = ((Quadrilateral) obj).getPoints();
         for(int i = 0; i < points.length; i++)
             if (!points[i].equals(this.points[i]))

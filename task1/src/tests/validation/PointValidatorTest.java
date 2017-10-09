@@ -42,10 +42,5 @@ public class PointValidatorTest {
         Assert.assertEquals(pointValidator.isValid(testString), true);
     }
 
-    @Test
-    public void temp() throws IOException {
-        //QuadrDataReader paramReader = new QuadrDataReader();
-        //paramReader.read("src/files/Param");
-    }
 }
 
