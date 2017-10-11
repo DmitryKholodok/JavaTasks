@@ -1,6 +1,7 @@
 package by.kholodok.task1.reader.impl;
 
 import by.kholodok.task1.reader.DataReader;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class QuadrDataReader implements DataReader {
 
-    private static final Logger logger = LogManager.getLogger(QuadrDataReader.class);
+    private static Logger logger = LogManager.getLogger(QuadrDataReader.class);
 
     public List<String> read(String filename) throws IOException {
         List<String> stringList = new ArrayList<>();
@@ -22,6 +23,7 @@ public class QuadrDataReader implements DataReader {
                 stringList.add(str);
             }
         }
+        logger.log(Level.INFO, stringList.toString());
         return stringList;
     }
 

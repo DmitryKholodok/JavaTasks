@@ -2,15 +2,18 @@ package by.kholodok.task1.creator.impl;
 
 import by.kholodok.task1.creator.Creator;
 import by.kholodok.task1.entity.Entity;
-import by.kholodok.task1.entity.Quadrilateral;
 import by.kholodok.task1.parser.Parser;
 import by.kholodok.task1.validation.Validator;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class QuadrCreator implements Creator {
 
+    private final Logger logger = LogManager.getLogger(QuadrCreator.class);
     private Validator validator;
     private Parser parser;
 
@@ -25,6 +28,7 @@ public class QuadrCreator implements Creator {
         for (String line : lines) {
             Entity entity = create(line);
             if (entity != null) {
+                logger.log(Level.INFO, "Was created a new entity - " + entity.toString());
                 quadrList.add(entity);
             }
         }

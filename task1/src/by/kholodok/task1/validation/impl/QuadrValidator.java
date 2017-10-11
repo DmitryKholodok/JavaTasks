@@ -5,20 +5,27 @@ import by.kholodok.task1.handler.impl.QuadrLineHandler;
 import by.kholodok.task1.validation.Validator;
 import by.kholodok.task1.exception.ParamCountException;
 import by.kholodok.task1.exception.PointValidateException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class QuadrValidator implements Validator {
 
+    private static Logger logger = LogManager.getLogger(QuadrValidator.class);
     private final PointValidator pointValidator = new PointValidator();
 
     @Override
     public boolean isValid(String str) {
+        logger.log(Level.DEBUG, str);
         str = deleteWasteInfo(str);
         String[] points = splitLine(str);
         try {
             validation(points);
         } catch (ParamCountException | PointValidateException e) {
+            logger.log(Level.ERROR, points.toString() + " is not valid quadrilateral. " + e);
             return false;
         }
+        logger.log(Level.INFO, points.toString() + " is valid quadrilateral. ");
         return true;
     }
 

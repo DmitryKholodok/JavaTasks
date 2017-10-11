@@ -5,10 +5,15 @@ import by.kholodok.task1.entity.Entity;
 import by.kholodok.task1.exception.NotQuadrException;
 import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.entity.Quadrilateral;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.geom.Point2D;
 
 public class QuadrAction implements Action {
+
+    private static Logger logger = LogManager.getLogger(QuadrAction.class);
 
     private class VectorAction {
 
@@ -29,6 +34,7 @@ public class QuadrAction implements Action {
 
     @Override
     public double calcArea(Entity entity) throws NotQuadrException {
+        logger.log(Level.DEBUG, "method : calcArea, entity - " + entity.toString());
         if (!isQuadr(entity))
             throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
 
@@ -40,6 +46,7 @@ public class QuadrAction implements Action {
 
     @Override
     public double calcPerimeter(Entity entity) throws NotQuadrException {
+        logger.log(Level.DEBUG, "method : calcPerimeter, entity - " + entity.toString());
         if (!isQuadr(entity))
             throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
 
@@ -52,6 +59,7 @@ public class QuadrAction implements Action {
 
     @Override
     public boolean isConvex(Entity entity) throws NotQuadrException {
+        logger.log(Level.DEBUG, "method : isConvex, entity - " + entity.toString());
         if (!isQuadr(entity))
             throw new NotQuadrException(entity.toString() + " is not an quadrilateral!");
 
@@ -61,13 +69,15 @@ public class QuadrAction implements Action {
     }
 
     @Override
-    public boolean isQuadr(Entity entity) { // 3 points on the one line
+    public boolean isQuadr(Entity entity) {
+        logger.log(Level.DEBUG, "method : isQuadr, entity - " + entity.toString());
         Point[] points = ((Quadrilateral)entity).getPoints();
         return isShapeQuadr(points) ? true : false;
     }
 
     @Override
     public boolean isSquare(Entity entity) throws NotQuadrException {
+        logger.log(Level.DEBUG, "method : isSquare, entity - " + entity.toString());
         if (!isQuadr(entity))
             throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
 
@@ -147,9 +157,8 @@ public class QuadrAction implements Action {
 
     private double[] calcDistances(Point[] points) {
         double[] distances = new double[Quadrilateral.SIDES_COUNT];
-        for(int i = 0; i < Quadrilateral.SIDES_COUNT - 1; i++)
-            distances[i] += calcDistance(points[i], points[i + 1]);
-        distances[Quadrilateral.SIDES_COUNT - 1] += calcDistance(points[Quadrilateral.SIDES_COUNT - 1], points[0]);
+        for(int i = 0; i < Quadrilateral.SIDES_COUNT; i++)
+            distances[i] += calcDistance(points[i], points[calcIndex(i + 1)]);
         return distances;
     }
 }
