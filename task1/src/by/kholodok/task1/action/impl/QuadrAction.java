@@ -1,7 +1,8 @@
 package by.kholodok.task1.action.impl;
 
 import by.kholodok.task1.action.Action;
-import by.kholodok.task1.action.exception.NotQuadrException;
+import by.kholodok.task1.entity.Entity;
+import by.kholodok.task1.exception.NotQuadrException;
 import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.entity.Quadrilateral;
 
@@ -27,46 +28,50 @@ public class QuadrAction implements Action {
     }
 
     @Override
-    public double calcArea(Quadrilateral quadr) throws NotQuadrException {
-        if (!isQuadr(quadr))
-            throw new NotQuadrException(quadr.toString() + " is not a quadrilateral!");
-        Point[] points = quadr.getPoints();
+    public double calcArea(Entity entity) throws NotQuadrException {
+        if (!isQuadr(entity))
+            throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
+
+        Point[] points = ((Quadrilateral)entity).getPoints();
         double[] determinants = getSecondOrderDeterms(points);
         double sum = calcSum(determinants) / 2;
         return sum > 0 ? sum : -sum;
     }
 
     @Override
-    public double calcPerimeter(Quadrilateral quadr) throws NotQuadrException {
-        if (!isQuadr(quadr))
-            throw new NotQuadrException(quadr.toString() + " is not a quadrilateral!");
+    public double calcPerimeter(Entity entity) throws NotQuadrException {
+        if (!isQuadr(entity))
+            throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
+
         double result = 0;
-        double[] distances = calcDistances(quadr.getPoints());
+        double[] distances = calcDistances(((Quadrilateral)entity).getPoints());
         for(int i = 0; i < Quadrilateral.SIDES_COUNT; i++)
             result += distances[i];
         return result;
     }
 
     @Override
-    public boolean isConvex(Quadrilateral quadr) throws NotQuadrException {
-        if (!isQuadr(quadr))
-            throw new NotQuadrException(quadr.toString() + " is not a quadrilateral!");
-        Point[] points = quadr.getPoints();
+    public boolean isConvex(Entity entity) throws NotQuadrException {
+        if (!isQuadr(entity))
+            throw new NotQuadrException(entity.toString() + " is not an quadrilateral!");
+
+        Point[] points = ((Quadrilateral)entity).getPoints();
         double[] vectorsWork = calcVectorWorks(points);
         return areAllSignsTheSame(vectorsWork) ? true : false;
     }
 
     @Override
-    public boolean isQuadr(Quadrilateral quadr) { // 3 points on the one line
-        Point[] points = quadr.getPoints();
+    public boolean isQuadr(Entity entity) { // 3 points on the one line
+        Point[] points = ((Quadrilateral)entity).getPoints();
         return isShapeQuadr(points) ? true : false;
     }
 
     @Override
-    public boolean isSquare(Quadrilateral quadr) throws NotQuadrException {
-        if (!isQuadr(quadr))
-            throw new NotQuadrException(quadr.toString() + " is not a quadrilateral!");
-        double[] distances = calcDistances(quadr.getPoints());
+    public boolean isSquare(Entity entity) throws NotQuadrException {
+        if (!isQuadr(entity))
+            throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
+
+        double[] distances = calcDistances(((Quadrilateral)entity).getPoints());
         return isAllDistEqual(distances) ?  true : false;
     }
 
@@ -79,10 +84,9 @@ public class QuadrAction implements Action {
 
     private double[] getSecondOrderDeterms(Point[] p) {
         double[] determinants = new double[Quadrilateral.SIDES_COUNT];
-        determinants[0] = getSecondOrderDeterm(p[0], p[1]);
-        determinants[1] = getSecondOrderDeterm(p[1], p[2]);
-        determinants[2] = getSecondOrderDeterm(p[2], p[3]);
-        determinants[3] = getSecondOrderDeterm(p[3], p[0]);
+        for(int i = 0; i < Quadrilateral.SIDES_COUNT; i++) {
+            determinants[i] = getSecondOrderDeterm(p[i], p[calcIndex(i + 1)]);
+        }
         return determinants;
     }
 
@@ -106,11 +110,14 @@ public class QuadrAction implements Action {
     private double[] calcVectorWorks(Point[] p) {
         VectorAction vectorAction = new VectorAction();
         double[] vectorWorks = new double[Quadrilateral.SIDES_COUNT];
-        vectorWorks[0] = vectorAction.calcVectorWork(p[1], p[0], p[2]);
-        vectorWorks[1] = vectorAction.calcVectorWork(p[2], p[1], p[3]);
-        vectorWorks[2] = vectorAction.calcVectorWork(p[3], p[2], p[0]);
-        vectorWorks[3] = vectorAction.calcVectorWork(p[0], p[3], p[1]);
+        for(int i = 0; i < Quadrilateral.SIDES_COUNT; i++) {
+            vectorWorks[i] = vectorAction.calcVectorWork(p[calcIndex(i + 1)], p[calcIndex(i)], p[calcIndex(i + 2)]);
+        }
         return vectorWorks;
+    }
+
+    private int calcIndex(int i) {
+        return i % Quadrilateral.SIDES_COUNT;
     }
 
     private boolean isShapeQuadr(Point[] p) {
@@ -140,9 +147,9 @@ public class QuadrAction implements Action {
 
     private double[] calcDistances(Point[] points) {
         double[] distances = new double[Quadrilateral.SIDES_COUNT];
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < Quadrilateral.SIDES_COUNT - 1; i++)
             distances[i] += calcDistance(points[i], points[i + 1]);
-        distances[3] += calcDistance(points[3], points[0]);
+        distances[Quadrilateral.SIDES_COUNT - 1] += calcDistance(points[Quadrilateral.SIDES_COUNT - 1], points[0]);
         return distances;
     }
 }

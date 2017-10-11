@@ -1,8 +1,8 @@
-package by.kholodok.task1.action.exception;
+package by.kholodok.task1.exception;
 
 public class NotQuadrException extends Exception {
 
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 1L;
 
     public NotQuadrException(String message) {
         super(message);

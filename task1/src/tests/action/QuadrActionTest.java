@@ -1,6 +1,6 @@
 package tests.action;
 
-import by.kholodok.task1.action.exception.NotQuadrException;
+import by.kholodok.task1.exception.NotQuadrException;
 import by.kholodok.task1.action.impl.QuadrAction;
 import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.entity.Quadrilateral;

@@ -1,6 +1,6 @@
 package by.kholodok.task1.entity;
 
-public class Point extends Shape {
+public class Point extends Entity implements Cloneable {
 
     private double x;
     private double y;
@@ -35,5 +35,9 @@ public class Point extends Shape {
     @Override
     public String toString() {
         return "(" + String.valueOf(x) + ", " + String.valueOf(y) + ")";
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

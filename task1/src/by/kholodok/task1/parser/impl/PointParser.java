@@ -1,14 +1,16 @@
 package by.kholodok.task1.parser.impl;
 
 import by.kholodok.task1.entity.Point;
-import by.kholodok.task1.entity.Shape;
+import by.kholodok.task1.entity.Entity;
 import by.kholodok.task1.handler.LineHandler;
-import by.kholodok.task1.parser.ShapeParser;
+import by.kholodok.task1.handler.impl.PointLineHandler;
+import by.kholodok.task1.handler.impl.QuadrLineHandler;
+import by.kholodok.task1.parser.Parser;
 
-public class PointParser implements ShapeParser {
+public class PointParser implements Parser {
 
     @Override
-    public Shape parse(String str) {
+    public Entity parse(String str) {
         str = deleteWasteInfo(str);
         String[] coord = splitLine(str);
         return new Point(Double.parseDouble(coord[0]), Double.parseDouble(coord[1]));
@@ -19,7 +21,7 @@ public class PointParser implements ShapeParser {
     }
 
     private String deleteWasteInfo(String str) {
-        return LineHandler.deletePointWasteInfo(str);
+        return new PointLineHandler().deleteWasteInfo(str);
     }
 
 }

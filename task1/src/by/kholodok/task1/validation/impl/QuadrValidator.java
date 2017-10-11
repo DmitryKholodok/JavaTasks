@@ -1,15 +1,14 @@
 package by.kholodok.task1.validation.impl;
 
 import by.kholodok.task1.entity.Quadrilateral;
-import by.kholodok.task1.handler.LineHandler;
+import by.kholodok.task1.handler.impl.QuadrLineHandler;
 import by.kholodok.task1.validation.Validator;
-import by.kholodok.task1.validation.exception.ParamCountException;
-import by.kholodok.task1.validation.exception.PointValidateException;
+import by.kholodok.task1.exception.ParamCountException;
+import by.kholodok.task1.exception.PointValidateException;
 
 public class QuadrValidator implements Validator {
 
     private final PointValidator pointValidator = new PointValidator();
-    private final LineHandler lineHandler = new LineHandler();
 
     @Override
     public boolean isValid(String str) {
@@ -24,11 +23,11 @@ public class QuadrValidator implements Validator {
     }
 
     private String deleteWasteInfo(String str) {
-        return LineHandler.deleteQuadrWasteInfo(str);
+        return new QuadrLineHandler().deleteWasteInfo(str);
     }
 
     private String[] splitLine(String str) {
-        return str.split(LineHandler.SPACE);
+        return str.split(QuadrLineHandler.SPACE);
     }
 
     private void checkParamCount(String[] points) throws ParamCountException {

@@ -1,8 +1,9 @@
 package by.kholodok.task1.validation.impl;
 
-import by.kholodok.task1.handler.LineHandler;
+import by.kholodok.task1.handler.impl.PointLineHandler;
+import by.kholodok.task1.handler.impl.QuadrLineHandler;
 import by.kholodok.task1.validation.Validator;
-import by.kholodok.task1.validation.exception.ParamCountException;
+import by.kholodok.task1.exception.ParamCountException;
 
 public class PointValidator implements Validator {
 
@@ -19,7 +20,7 @@ public class PointValidator implements Validator {
     }
 
     private String[] splitLine(String str) {
-        return str.split(LineHandler.COMMA);
+        return str.split(QuadrLineHandler.COMMA);
     }
 
     private void checkParamCount(String[] params) throws ParamCountException {
@@ -33,7 +34,7 @@ public class PointValidator implements Validator {
     }
 
     private String deleteWasteInfo(String str) {
-        return LineHandler.deletePointWasteInfo(str);
+        return new PointLineHandler().deleteWasteInfo(str);
     }
 
     private void validation(String[] coord) throws ParamCountException, NumberFormatException {

@@ -1,4 +1,4 @@
-package by.kholodok.task1.validation.exception;
+package by.kholodok.task1.exception;
 
 public class PointValidateException extends Exception {
 

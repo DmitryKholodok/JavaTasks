@@ -1,6 +1,6 @@
 package by.kholodok.task1.entity;
 
-public class Quadrilateral extends Shape {
+public class Quadrilateral extends Entity {
 
     public final static int SIDES_COUNT = 4;
 
@@ -11,7 +11,7 @@ public class Quadrilateral extends Shape {
         this.points = points;
     }
 
-    public Point[] getPoints() { return points; }
+    public Point[] getPoints() { return createNewPoints(); }
 
     @Override
     public int hashCode() {
@@ -49,6 +49,18 @@ public class Quadrilateral extends Shape {
         }
         sb.replace(sb.length() - 1, sb.length(), "]");
         return sb.toString();
+    }
+
+    private Point[] createNewPoints() {
+        Point[] points = new Point[this.points.length];
+        try {
+            for (int i = 0; i < points.length; i++) {
+                points[i] = (Point)this.points[i].clone();
+            }
+        } catch (CloneNotSupportedException e)  {
+            return null;
+        }
+        return points;
     }
 
 }

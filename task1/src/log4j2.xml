@@ -2,7 +2,7 @@
 <Configuration status="WARN">
 
     <Appenders>
-        <File name="FILE" fileName="src/files/logs" append="true">
+        <File name="FILE" fileName="src/file/logs" append="true">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %C{2} (%F:%L) - %m%n"/>
         </File>
         <Console name="STDOUT" target="SYSTEM_OUT">

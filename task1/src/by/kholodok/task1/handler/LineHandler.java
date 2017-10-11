@@ -1,23 +1,15 @@
 package by.kholodok.task1.handler;
 
-public class LineHandler {
+public interface LineHandler {
 
-    public static final String SPACE = " ";
-    public static final String COMMA = ",";
+    String OPEN_BRACKET = "(";
+    String CLOSE_BRACKET = ")";
+    String RECT_OPEN_BRACKET = "[";
+    String RECT_CLOSE_BRACKET = "]";
+    String COMMA = ",";
+    String SPACE = " ";
+    String VOID = "";
 
-    public static String deleteQuadrWasteInfo(String str) {
-        str = str.trim();
-        str = str.replace("[", "");
-        str = str.replace("]", "");
-        str = str.replace(", ", ",");
-        return str;
-    }
-
-    public static String deletePointWasteInfo(String str) {
-        str = str.trim();
-        str = str.replace("(", "");
-        str = str.replace(")", "");
-        return str;
-    }
+    String deleteWasteInfo(String str);
 
 }

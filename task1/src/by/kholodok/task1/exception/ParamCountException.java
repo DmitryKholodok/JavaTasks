@@ -1,8 +1,8 @@
-package by.kholodok.task1.validation.exception;
+package by.kholodok.task1.exception;
 
 public class ParamCountException extends Exception {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     public ParamCountException(String message) {
         super(message);
