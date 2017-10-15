@@ -9,7 +9,7 @@ public class QuadrLineHandler implements LineHandler {
         str = str.trim();
         str = str.replace(RECT_OPEN_BRACKET, VOID);
         str = str.replace(RECT_CLOSE_BRACKET, VOID);
-        str = str.replace(COMMA + SPACE, COMMA);
+        str = str.replace(COMMA_SPACE, COMMA);
         return str;
     }
 }

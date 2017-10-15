@@ -11,11 +11,11 @@ import org.apache.logging.log4j.Logger;
 
 public class PointParser implements Parser {
 
-    private static Logger logger = LogManager.getLogger(PointParser.class);
+    private static final Logger LOGGER = LogManager.getLogger(PointParser.class);
 
     @Override
     public Entity parse(String str) {
-        logger.log(Level.DEBUG, "Parsing - " + str);
+        LOGGER.log(Level.DEBUG, "Parsing - " + str);
         str = deleteWasteInfo(str);
         String[] coord = splitLine(str);
         return new Point(Double.parseDouble(coord[0]), Double.parseDouble(coord[1]));

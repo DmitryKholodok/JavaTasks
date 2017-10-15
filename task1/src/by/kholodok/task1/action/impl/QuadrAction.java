@@ -1,8 +1,10 @@
 package by.kholodok.task1.action.impl;
 
-import by.kholodok.task1.action.Action;
+import by.kholodok.task1.action.QuadrProperty;
+import by.kholodok.task1.action.ShapeCalculation;
 import by.kholodok.task1.entity.Entity;
-import by.kholodok.task1.exception.NotQuadrException;
+import by.kholodok.task1.entity.Vector;
+import by.kholodok.task1.exception.ShapeException;
 import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.entity.Quadrilateral;
 import org.apache.logging.log4j.Level;
@@ -11,32 +13,15 @@ import org.apache.logging.log4j.Logger;
 
 import java.awt.geom.Point2D;
 
-public class QuadrAction implements Action {
+public class QuadrAction implements QuadrProperty, ShapeCalculation {
 
-    private static Logger logger = LogManager.getLogger(QuadrAction.class);
-
-    private class VectorAction {
-
-        double calcVectorWork(Point vector1, Point vector2) {
-            return vector1.getX() * vector2.getY() - vector2.getX() * vector1.getY();
-        }
-
-        double calcVectorWork(Point pCenter, Point p1, Point p2) {
-            Point vector1 = calcVector(pCenter, p1);
-            Point vector2 = calcVector(pCenter, p2);
-            return calcVectorWork(vector1, vector2);
-        }
-
-        Point calcVector(Point p1, Point p2) {
-            return new Point(p1.getX() - p2.getX(), p1.getY() - p2.getY());
-        }
-    }
+    private final static Logger LOGGER = LogManager.getLogger(QuadrAction.class);
 
     @Override
-    public double calcArea(Entity entity) throws NotQuadrException {
-        logger.log(Level.DEBUG, "method : calcArea, entity - " + entity.toString());
+    public double calcArea(Entity entity) throws ShapeException {
+        LOGGER.log(Level.DEBUG, "method : calcArea, entity - " + entity.toString());
         if (!isQuadr(entity))
-            throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
+            throw new ShapeException(entity.toString() + " is not a quadrilateral!");
 
         Point[] points = ((Quadrilateral)entity).getPoints();
         double[] determinants = getSecondOrderDeterms(points);
@@ -45,10 +30,10 @@ public class QuadrAction implements Action {
     }
 
     @Override
-    public double calcPerimeter(Entity entity) throws NotQuadrException {
-        logger.log(Level.DEBUG, "method : calcPerimeter, entity - " + entity.toString());
+    public double calcPerimeter(Entity entity) throws ShapeException {
+        LOGGER.log(Level.DEBUG, "method : calcPerimeter, entity - " + entity.toString());
         if (!isQuadr(entity))
-            throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
+            throw new ShapeException(entity.toString() + " is not a quadrilateral!");
 
         double result = 0;
         double[] distances = calcDistances(((Quadrilateral)entity).getPoints());
@@ -58,10 +43,10 @@ public class QuadrAction implements Action {
     }
 
     @Override
-    public boolean isConvex(Entity entity) throws NotQuadrException {
-        logger.log(Level.DEBUG, "method : isConvex, entity - " + entity.toString());
+    public boolean isConvex(Entity entity) throws ShapeException {
+        LOGGER.log(Level.DEBUG, "method : isConvex, entity - " + entity.toString());
         if (!isQuadr(entity))
-            throw new NotQuadrException(entity.toString() + " is not an quadrilateral!");
+            throw new ShapeException(entity.toString() + " is not an quadrilateral!");
 
         Point[] points = ((Quadrilateral)entity).getPoints();
         double[] vectorsWork = calcVectorWorks(points);
@@ -70,16 +55,16 @@ public class QuadrAction implements Action {
 
     @Override
     public boolean isQuadr(Entity entity) {
-        logger.log(Level.DEBUG, "method : isQuadr, entity - " + entity.toString());
+        LOGGER.log(Level.DEBUG, "method : isQuadr, entity - " + entity.toString());
         Point[] points = ((Quadrilateral)entity).getPoints();
         return isShapeQuadr(points) ? true : false;
     }
 
     @Override
-    public boolean isSquare(Entity entity) throws NotQuadrException {
-        logger.log(Level.DEBUG, "method : isSquare, entity - " + entity.toString());
+    public boolean isSquare(Entity entity) throws ShapeException {
+        LOGGER.log(Level.DEBUG, "method : isSquare, entity - " + entity.toString());
         if (!isQuadr(entity))
-            throw new NotQuadrException(entity.toString() + " is not a quadrilateral!");
+            throw new ShapeException(entity.toString() + " is not a quadrilateral!");
 
         double[] distances = calcDistances(((Quadrilateral)entity).getPoints());
         return isAllDistEqual(distances) ?  true : false;
@@ -105,10 +90,11 @@ public class QuadrAction implements Action {
     }
 
     private boolean areAllSignsTheSame(double[] nums) {
-
-        for (int i = 0; i < nums.length - 1; i++) {
+        int i = 0;
+        while(i < nums.length - 1) {
             if (!isTheSameSigns(nums[i], nums[i + 1]))
                 return false;
+            i++;
         }
         return true;
     }
@@ -118,11 +104,15 @@ public class QuadrAction implements Action {
     }
 
     private double[] calcVectorWorks(Point[] p) {
-        VectorAction vectorAction = new VectorAction();
         double[] vectorWorks = new double[Quadrilateral.SIDES_COUNT];
+
+        MathVectorAction vectorAction = new MathVectorAction();
         for(int i = 0; i < Quadrilateral.SIDES_COUNT; i++) {
-            vectorWorks[i] = vectorAction.calcVectorWork(p[calcIndex(i + 1)], p[calcIndex(i)], p[calcIndex(i + 2)]);
+            Vector vector1 = new Vector(p[calcIndex(i)], p[calcIndex(i + 1)]);
+            Vector vector2 = new Vector(p[calcIndex(i)], p[calcIndex(i + 2)]);
+            vectorWorks[i] = vectorAction.calculateVectorsWork(vector1, vector2);
         }
+
         return vectorWorks;
     }
 
@@ -145,9 +135,12 @@ public class QuadrAction implements Action {
     }
 
     private boolean isAllDistEqual(double[] mass) {
-        for(int i = 0; i < mass.length - 1; i++)
+        int i = 0;
+        while(i++ < mass.length - 1) {
             if (mass[i] != mass[mass.length - 1])
                 return false;
+//            i++;
+        }
         return true;
     }
 

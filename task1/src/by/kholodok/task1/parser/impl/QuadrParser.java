@@ -12,12 +12,12 @@ import org.apache.logging.log4j.Logger;
 
 public class QuadrParser implements Parser {
 
-    private static Logger logger = LogManager.getLogger(PointParser.class);
+    private final static Logger LOGGER = LogManager.getLogger(PointParser.class);
     private final PointParser pointParser = new PointParser();
 
     @Override
     public Entity parse(String str) {
-        logger.log(Level.DEBUG, "Parsing - " + str);
+        LOGGER.log(Level.DEBUG, "Parsing - " + str);
         str = deleteWasteInfo(str);
         String[] strPoints = splitLine(str);
         Point[] points = new Point[Quadrilateral.SIDES_COUNT];
@@ -31,7 +31,7 @@ public class QuadrParser implements Parser {
     }
 
     private String[] splitLine(String str) {
-        return str.split(LineHandler.SPACE);
+        return str.split(LineHandler.SPACE_REGEX);
     }
 
 }

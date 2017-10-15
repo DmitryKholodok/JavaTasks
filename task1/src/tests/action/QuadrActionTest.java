@@ -1,6 +1,6 @@
 package tests.action;
 
-import by.kholodok.task1.exception.NotQuadrException;
+import by.kholodok.task1.exception.ShapeException;
 import by.kholodok.task1.action.impl.QuadrAction;
 import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.entity.Quadrilateral;
@@ -50,7 +50,7 @@ public class QuadrActionTest {
     }
 
     @Test
-    public void testSquarecalcPerimeter() throws NotQuadrException {
+    public void testSquarecalcPerimeter() throws ShapeException {
         Assert.assertEquals(quadrAction.calcPerimeter(square), 8.0);
     }
 
@@ -60,22 +60,22 @@ public class QuadrActionTest {
     }
 
     @Test
-    public void testSquareIsConvex() throws NotQuadrException {
+    public void testSquareIsConvex() throws ShapeException {
         Assert.assertEquals(quadrAction.isConvex(square), true);
     }
 
     @Test
-    public void testSquarecalcArea() throws NotQuadrException {
+    public void testSquarecalcArea() throws ShapeException {
         Assert.assertEquals(quadrAction.calcArea(square), 4.0);
     }
 
     @Test
-    public void testSquareIsSquare() throws NotQuadrException {
+    public void testSquareIsSquare() throws ShapeException {
         Assert.assertEquals(quadrAction.isSquare(square), true);
     }
 
     @Test
-    public void testConvexQuadrcalcPerimeter() throws NotQuadrException {
+    public void testConvexQuadrcalcPerimeter() throws ShapeException {
         Assert.assertEquals(quadrAction.calcPerimeter(convexQuadr), 20.94, 0.01);
     }
 
@@ -83,22 +83,22 @@ public class QuadrActionTest {
     public void testConvexQuadrIsQuadr() { Assert.assertEquals(quadrAction.isQuadr(convexQuadr), true); }
 
     @Test
-    public void testConvexQuadrIsConvex() throws NotQuadrException {
+    public void testConvexQuadrIsConvex() throws ShapeException {
         Assert.assertEquals(quadrAction.isConvex(convexQuadr), true);
     }
 
     @Test
-    public void testConvexQuadrcalcArea() throws NotQuadrException {
+    public void testConvexQuadrcalcArea() throws ShapeException {
         Assert.assertEquals(quadrAction.calcArea(convexQuadr), 24.0);
     }
 
     @Test
-    public void testConvexQuadrIsSquare() throws NotQuadrException {
+    public void testConvexQuadrIsSquare() throws ShapeException {
         Assert.assertEquals(quadrAction.isSquare(convexQuadr), false);
     }
 
     @Test
-    public void testUnConvexQuadrcalcPerimeter() throws NotQuadrException {
+    public void testUnConvexQuadrcalcPerimeter() throws ShapeException {
         Assert.assertEquals(quadrAction.calcPerimeter(unConvexQuadr), 19.4, 0.1);
     }
 
@@ -106,40 +106,40 @@ public class QuadrActionTest {
     public void testUnConvexQuadrIsQuadr() { Assert.assertEquals(quadrAction.isQuadr(unConvexQuadr), true); }
 
     @Test
-    public void testUnConvexQuadIsConvex() throws NotQuadrException {
+    public void testUnConvexQuadIsConvex() throws ShapeException {
         Assert.assertEquals(quadrAction.isConvex(unConvexQuadr), false);
     }                                                                                                                                        
 
     @Test
-    public void testUnConvexQuadrcalcArea() throws NotQuadrException {
+    public void testUnConvexQuadrcalcArea() throws ShapeException {
         Assert.assertEquals(quadrAction.calcArea(unConvexQuadr), 5.0, 0.1);
     }
 
     @Test
-    public void testUnConvexQuadrIsSquare() throws NotQuadrException {
+    public void testUnConvexQuadrIsSquare() throws ShapeException {
         Assert.assertEquals(quadrAction.isSquare(unConvexQuadr), false);
     }
 
-    @Test(expectedExceptions = NotQuadrException.class)
-    public void testNotQuadrcalcPerimeter() throws NotQuadrException {
+    @Test(expectedExceptions = ShapeException.class)
+    public void testNotQuadrcalcPerimeter() throws ShapeException {
         quadrAction.calcPerimeter(notQuadr);
     }
 
     @Test
     public void testNotQuadrIsQuadr() { Assert.assertEquals(quadrAction.isQuadr(notQuadr), false); }
 
-    @Test(expectedExceptions = NotQuadrException.class)
-    public void testNotQuadIsConvex() throws NotQuadrException {
+    @Test(expectedExceptions = ShapeException.class)
+    public void testNotQuadIsConvex() throws ShapeException {
         Assert.assertEquals(quadrAction.isConvex(notQuadr), false);
     }
 
-    @Test(expectedExceptions = NotQuadrException.class)
-    public void testNotQuadrcalcArea() throws NotQuadrException {
+    @Test(expectedExceptions = ShapeException.class)
+    public void testNotQuadrcalcArea() throws ShapeException {
        quadrAction.calcArea(notQuadr) ;
     }
 
-    @Test(expectedExceptions = NotQuadrException.class)
-    public void testNotQuadrIsSquare() throws NotQuadrException {
+    @Test(expectedExceptions = ShapeException.class)
+    public void testNotQuadrIsSquare() throws ShapeException {
         quadrAction.isSquare(notQuadr);
     }
 

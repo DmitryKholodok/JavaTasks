@@ -26,7 +26,7 @@ public class Point extends Entity implements Cloneable {
 
         if (this == obj) return true;
         if (obj == null) return false;
-        if (!(obj instanceof Point)) return false;
+        if (obj.getClass() != this.getClass()) return false;
         Point p = (Point) obj;
         return (p.x == this.x && p.y == this.y);
 

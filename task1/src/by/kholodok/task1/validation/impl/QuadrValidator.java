@@ -1,6 +1,7 @@
 package by.kholodok.task1.validation.impl;
 
 import by.kholodok.task1.entity.Quadrilateral;
+import by.kholodok.task1.handler.LineHandler;
 import by.kholodok.task1.handler.impl.QuadrLineHandler;
 import by.kholodok.task1.validation.Validator;
 import by.kholodok.task1.exception.ParamCountException;
@@ -11,21 +12,21 @@ import org.apache.logging.log4j.Logger;
 
 public class QuadrValidator implements Validator {
 
-    private static Logger logger = LogManager.getLogger(QuadrValidator.class);
+    private static final Logger LOGGER = LogManager.getLogger(QuadrValidator.class);
     private final PointValidator pointValidator = new PointValidator();
 
     @Override
     public boolean isValid(String str) {
-        logger.log(Level.DEBUG, str);
+        LOGGER.log(Level.DEBUG, str);
         str = deleteWasteInfo(str);
         String[] points = splitLine(str);
         try {
             validation(points);
         } catch (ParamCountException | PointValidateException e) {
-            logger.log(Level.ERROR, points.toString() + " is not valid quadrilateral. " + e);
+            LOGGER.log(Level.ERROR, str + " is not valid quadrilateral. " + e);
             return false;
         }
-        logger.log(Level.INFO, points.toString() + " is valid quadrilateral. ");
+        LOGGER.log(Level.INFO, str + " is valid quadrilateral. ");
         return true;
     }
 
@@ -34,7 +35,7 @@ public class QuadrValidator implements Validator {
     }
 
     private String[] splitLine(String str) {
-        return str.split(QuadrLineHandler.SPACE);
+        return str.split(LineHandler.SPACE_REGEX);
     }
 
     private void checkParamCount(String[] points) throws ParamCountException {

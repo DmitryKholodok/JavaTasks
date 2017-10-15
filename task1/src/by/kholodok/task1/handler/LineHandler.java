@@ -6,9 +6,10 @@ public interface LineHandler {
     String CLOSE_BRACKET = ")";
     String RECT_OPEN_BRACKET = "[";
     String RECT_CLOSE_BRACKET = "]";
+    String COMMA_SPACE = ", ";
     String COMMA = ",";
-    String SPACE = " ";
     String VOID = "";
+    String SPACE_REGEX = "\\s";
 
     String deleteWasteInfo(String str);
 

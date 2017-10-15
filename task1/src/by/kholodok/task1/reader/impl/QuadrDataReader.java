@@ -13,7 +13,7 @@ import java.util.List;
 
 public class QuadrDataReader implements DataReader {
 
-    private static Logger logger = LogManager.getLogger(QuadrDataReader.class);
+    private final static Logger LOGGER = LogManager.getLogger(QuadrDataReader.class);
 
     public List<String> read(String filename) throws IOException {
         List<String> stringList = new ArrayList<>();
@@ -23,7 +23,7 @@ public class QuadrDataReader implements DataReader {
                 stringList.add(str);
             }
         }
-        logger.log(Level.INFO, stringList.toString());
+        LOGGER.log(Level.INFO, stringList.toString());
         return stringList;
     }
 

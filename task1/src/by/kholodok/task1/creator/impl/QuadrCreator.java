@@ -13,9 +13,9 @@ import java.util.List;
 
 public class QuadrCreator implements Creator {
 
-    private final Logger logger = LogManager.getLogger(QuadrCreator.class);
-    private Validator validator;
-    private Parser parser;
+    private final static Logger LOGGER = LogManager.getLogger(QuadrCreator.class);
+    private final Validator validator;
+    private final Parser parser;
 
     public QuadrCreator(Validator validator, Parser parser) {
         this.validator = validator;
@@ -28,7 +28,7 @@ public class QuadrCreator implements Creator {
         for (String line : lines) {
             Entity entity = create(line);
             if (entity != null) {
-                logger.log(Level.INFO, "Was created a new entity - " + entity.toString());
+                LOGGER.log(Level.INFO, "Was created a new entity - " + entity.toString());
                 quadrList.add(entity);
             }
         }

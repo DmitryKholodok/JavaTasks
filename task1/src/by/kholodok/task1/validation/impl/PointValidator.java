@@ -1,6 +1,5 @@
 package by.kholodok.task1.validation.impl;
 
-import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.handler.impl.PointLineHandler;
 import by.kholodok.task1.handler.impl.QuadrLineHandler;
 import by.kholodok.task1.validation.Validator;
@@ -11,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class PointValidator implements Validator {
 
-    private static Logger logger = LogManager.getLogger(PointValidator.class);
+    private static final Logger LOGGER = LogManager.getLogger(PointValidator.class);
 
     @Override
     public boolean isValid(String str) {
@@ -20,10 +19,10 @@ public class PointValidator implements Validator {
         try {
             validation(coord);
         } catch (ParamCountException | NumberFormatException e) {
-            logger.log(Level.ERROR, coord.toString() + " is not valid point." + e);
+            LOGGER.log(Level.ERROR, str + " is not valid point." + e);
             return false;
         }
-        logger.log(Level.INFO, coord.toString() + " is valid point.");
+        LOGGER.log(Level.INFO, str + " is valid point.");
         return true;
     }
 
