@@ -105,14 +105,12 @@ public class QuadrAction implements QuadrProperty, ShapeCalculation {
 
     private double[] calcVectorWorks(Point[] p) {
         double[] vectorWorks = new double[Quadrilateral.SIDES_COUNT];
-
         MathVectorAction vectorAction = new MathVectorAction();
         for(int i = 0; i < Quadrilateral.SIDES_COUNT; i++) {
             Vector vector1 = new Vector(p[calcIndex(i)], p[calcIndex(i + 1)]);
             Vector vector2 = new Vector(p[calcIndex(i)], p[calcIndex(i + 2)]);
             vectorWorks[i] = vectorAction.calculateVectorsWork(vector1, vector2);
         }
-
         return vectorWorks;
     }
 
@@ -121,10 +119,9 @@ public class QuadrAction implements QuadrProperty, ShapeCalculation {
     }
 
     private boolean isShapeQuadr(Point[] p) {
-        if (isOnOneLine(p[0], p[2], p[1])) return false;
-        if (isOnOneLine(p[0], p[2], p[3])) return false;
-        if (isOnOneLine(p[1], p[3], p[0])) return false;
-        if (isOnOneLine(p[1], p[3], p[2])) return false;
+        if (isOnOneLine(p[0], p[2], p[1]) || isOnOneLine(p[0], p[2], p[3]) || isOnOneLine(p[1], p[3], p[0]) || isOnOneLine(p[1], p[3], p[2])) {
+            return false;
+        }
         return true;
     }
 
@@ -139,7 +136,6 @@ public class QuadrAction implements QuadrProperty, ShapeCalculation {
         while(i++ < mass.length - 1) {
             if (mass[i] != mass[mass.length - 1])
                 return false;
-//            i++;
         }
         return true;
     }

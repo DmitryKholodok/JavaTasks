@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class QuadrParser implements Parser {
 
     private final static Logger LOGGER = LogManager.getLogger(PointParser.class);
-    private final PointParser pointParser = new PointParser();
+    private final Parser pointParser = new PointParser();
 
     @Override
     public Entity parse(String str) {

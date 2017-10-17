@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class QuadrValidator implements Validator {
 
     private static final Logger LOGGER = LogManager.getLogger(QuadrValidator.class);
-    private final PointValidator pointValidator = new PointValidator();
+    private final Validator pointValidator = new PointValidator();
 
     @Override
     public boolean isValid(String str) {
