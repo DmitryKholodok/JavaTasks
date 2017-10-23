@@ -7,6 +7,8 @@ import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.validation.Validator;
 
+import java.util.Set;
+
 public class ApplianceServiceImpl implements ApplianceService{
 
 	@Override
@@ -18,7 +20,12 @@ public class ApplianceServiceImpl implements ApplianceService{
 		
 		DAOFactory factory = DAOFactory.getInstance();
 		ApplianceDAO applianceDAO = factory.getApplianceDAO();
-		
+
+		if (criteria.getApplianceType() == null) {
+			Set<E> set = criteria.getAllCriteria();
+			criteria.setApplianceType(set.iterator().next().getClass().getSimpleName());
+		}
+
 		Appliance appliance = applianceDAO.find(criteria);
 		
 		return appliance;

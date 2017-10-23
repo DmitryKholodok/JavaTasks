@@ -3,9 +3,9 @@ package by.tc.task01.dao.impl;
 import by.tc.task01.dao.ApplianceDAO;
 import by.tc.task01.dao.connection.Connection;
 import by.tc.task01.dao.connection.ConnectionFactory;
-import by.tc.task01.dao.creator.AppCreator;
-import by.tc.task01.dao.parser.LineParser;
-import by.tc.task01.dao.checker.Checker;
+import by.tc.task01.creator.AppCreator;
+import by.tc.task01.parser.LineParser;
+import by.tc.task01.checker.VarsChecker;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 
@@ -18,16 +18,19 @@ public class ApplianceDAOImpl implements ApplianceDAO{
 	@Override
 	public <E> Appliance find(Criteria<E> criteria) {
 		Connection connection = ConnectionFactory.getInstance().getConnection();
-		BufferedReader in = (BufferedReader)connection.connect();
-		Appliance appliance = receiveApp(in, criteria);
-		connection.close();
-		return appliance;
+		try {
+			try (BufferedReader in = (BufferedReader)connection.connect()) {
+                return receiveApp(in, criteria);
+            }
+		} catch (IOException e) {
+			return null;
+		}
 	}
 
 	private <E> Appliance receiveApp(BufferedReader in, Criteria<E> criteria) {
 		String line;
 		LineParser parser = new LineParser();
-		Checker checker = new Checker();
+		VarsChecker checker = new VarsChecker();
 		AppCreator creator = new AppCreator();
 		try {
 			while ((line = in.readLine()) != null) {
