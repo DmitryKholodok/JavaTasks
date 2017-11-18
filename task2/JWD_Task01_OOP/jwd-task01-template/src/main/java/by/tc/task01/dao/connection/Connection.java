@@ -4,4 +4,5 @@ import java.io.Reader;
 
 public interface Connection {
     Reader connect();
+    void close();
 }
