@@ -22,12 +22,14 @@ public class Criteria<E> {
 		this.applianceType = applianceType;
 	}
 		
-	public Object getCriteriaValue(E var) {
+	public Object getValue(E var) {
 		return criteria.get(var);
 	}
 
-	public Set<E> getAllCriteria() {
+	public Set<E> getParams() {
 		return criteria.keySet();
 	}
+
+	// you may add your own code here
 
 }

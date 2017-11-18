@@ -1,16 +1,16 @@
-package by.tc.task01.checker;
+package by.tc.task01.dao.checker;
 
 import by.tc.task01.entity.criteria.Criteria;
 
 import java.util.Map;
 
-public class VarsChecker {
+public class Checker {
 
     public <E> boolean isSuitable(Map<String, String> dataMapFromFile, Criteria<E> criteria) {
-        for (E key : criteria.getAllCriteria()) {
+        for (E key : criteria.getParams()) {
             String varValueFromSource = dataMapFromFile.get(key.toString());
-            String varValueFromCriteria = String.valueOf(criteria.getCriteriaValue(key));
-            if (!varValueFromSource.equalsIgnoreCase(varValueFromCriteria)) {
+            Object varValueFromCriteria = criteria.getValue(key);
+            if (!varValueFromSource.equals(varValueFromCriteria.toString())) {
                 return false;
             }
         }

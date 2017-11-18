@@ -28,4 +28,14 @@ public class FileConnection implements Connection {
         return reader;
     }
 
+    @Override
+    public void close() {
+        try {
+            if (reader != null) {
+                reader.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
