@@ -2,6 +2,8 @@ package by.kholodok.task1.entity;
 
 public class Vector extends Entity {
 
+    private int vectorId;
+
     private Point beginP;
     private Point endP;
 
@@ -13,9 +15,15 @@ public class Vector extends Entity {
     public Point getBeginP() {
         return new Point(beginP.getX(), beginP.getY());
     }
-
     public Point getEndP() {
         return new Point(endP.getX(), endP.getY());
+    }
+
+    public int getVectorId() {
+        return vectorId;
+    }
+    public void setVectorId(int vectorId) {
+        this.vectorId = vectorId;
     }
 
     @Override

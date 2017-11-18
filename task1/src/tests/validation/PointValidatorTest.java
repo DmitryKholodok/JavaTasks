@@ -1,7 +1,7 @@
 package tests.validation;
 
 import by.kholodok.task1.exception.ParamCountException;
-import by.kholodok.task1.validation.impl.PointValidator;
+import by.kholodok.task1.validator.impl.PointValidator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

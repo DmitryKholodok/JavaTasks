@@ -1,14 +1,30 @@
 package by.kholodok.task1.entity;
 
-public class Quadrilateral extends Entity {
+import by.kholodok.task1.collection.ObserverCollection;
+import by.kholodok.task1.observer.Observer;
+import by.kholodok.task1.util.IdGenerator;
+
+import java.util.Iterator;
+
+public class Quadrilateral extends Entity implements Observable {
+
+    private long quadrId;
+    private Point[] points;
 
     public final static int SIDES_COUNT = 4;
 
-    private Point[] points;
-
     public Quadrilateral(Point[] points) {
-
         this.points = points;
+        quadrId = IdGenerator.getId();
+    }
+
+    public void setPoints(Point[] points) {
+        this.points = points;
+        notifyObservers();
+    }
+
+    public long getQuadrId() {
+        return quadrId;
     }
 
     public Point[] getPoints() { return createNewPoints(); }
@@ -51,6 +67,24 @@ public class Quadrilateral extends Entity {
         return sb.toString();
     }
 
+    @Override
+    public void addObserver(Observer observer) {
+        ObserverCollection.getInstance().addObserver(this.quadrId, observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        ObserverCollection.getInstance().removeObserver(this.quadrId, observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        Iterator<Observer> observerIterator = ObserverCollection.getInstance().observers(quadrId).iterator();
+        while(observerIterator.hasNext()) {
+            observerIterator.next().update(this);
+        }
+    }
+
     private Point[] createNewPoints() {
         Point[] points = new Point[this.points.length];
         try {
@@ -62,5 +96,4 @@ public class Quadrilateral extends Entity {
         }
         return points;
     }
-
 }

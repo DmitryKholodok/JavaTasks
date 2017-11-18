@@ -1,6 +1,6 @@
-package by.kholodok.task1.handler.impl;
+package by.kholodok.task1.validator.handler.impl;
 
-import by.kholodok.task1.handler.LineHandler;
+import by.kholodok.task1.validator.handler.LineHandler;
 
 public class PointLineHandler implements LineHandler {
 

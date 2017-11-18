@@ -10,23 +10,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class QuadrDataReader implements DataReader {
 
     private final static Logger LOGGER = LogManager.getLogger(QuadrDataReader.class);
 
     public List<String> read(String filename) throws IOException {
-        List<String> stringList = new ArrayList<>();
+        List<String> stringList;
         try(BufferedReader in = new BufferedReader(new FileReader(filename))) {
-            String str;
-            while ((str = in.readLine()) != null) {
-                stringList.add(str);
-            }
+            stringList = in.lines().collect(Collectors.toList());
         }
         LOGGER.log(Level.INFO, stringList.toString());
         return stringList;
     }
-
-
-
 }

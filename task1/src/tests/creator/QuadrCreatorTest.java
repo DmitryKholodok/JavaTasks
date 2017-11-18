@@ -7,7 +7,7 @@ import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.entity.Quadrilateral;
 import by.kholodok.task1.parser.impl.QuadrParser;
 import by.kholodok.task1.reader.impl.QuadrDataReader;
-import by.kholodok.task1.validation.impl.QuadrValidator;
+import by.kholodok.task1.validator.impl.QuadrValidator;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

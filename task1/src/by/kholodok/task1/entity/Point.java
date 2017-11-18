@@ -2,6 +2,8 @@ package by.kholodok.task1.entity;
 
 public class Point extends Entity implements Cloneable {
 
+    private int pointId;
+
     private double x;
     private double y;
 
@@ -12,6 +14,13 @@ public class Point extends Entity implements Cloneable {
 
     public double getX() { return x; }
     public double getY() { return y; }
+
+    public int getPointId() {
+        return pointId;
+    }
+    public void setPointId(int pointId) {
+        this.pointId = pointId;
+    }
 
     @Override
     public int hashCode() {
@@ -37,6 +46,7 @@ public class Point extends Entity implements Cloneable {
         return "(" + String.valueOf(x) + ", " + String.valueOf(y) + ")";
     }
 
+    @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }

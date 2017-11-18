@@ -1,9 +1,9 @@
-package by.kholodok.task1.validation.impl;
+package by.kholodok.task1.validator.impl;
 
 import by.kholodok.task1.entity.Quadrilateral;
-import by.kholodok.task1.handler.LineHandler;
-import by.kholodok.task1.handler.impl.QuadrLineHandler;
-import by.kholodok.task1.validation.Validator;
+import by.kholodok.task1.validator.handler.LineHandler;
+import by.kholodok.task1.validator.handler.impl.QuadrLineHandler;
+import by.kholodok.task1.validator.Validator;
 import by.kholodok.task1.exception.ParamCountException;
 import by.kholodok.task1.exception.PointValidateException;
 import org.apache.logging.log4j.Level;

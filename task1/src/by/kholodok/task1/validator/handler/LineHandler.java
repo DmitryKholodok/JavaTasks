@@ -1,4 +1,4 @@
-package by.kholodok.task1.handler;
+package by.kholodok.task1.validator.handler;
 
 public interface LineHandler {
 

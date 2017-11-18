@@ -57,7 +57,7 @@ public class QuadrAction implements QuadrProperty, ShapeCalculation {
     public boolean isQuadr(Entity entity) {
         LOGGER.log(Level.DEBUG, "method : isQuadr, entity - " + entity.toString());
         Point[] points = ((Quadrilateral)entity).getPoints();
-        return isShapeQuadr(points) ? true : false;
+        return isShapeQuadr(points);
     }
 
     @Override
@@ -119,16 +119,13 @@ public class QuadrAction implements QuadrProperty, ShapeCalculation {
     }
 
     private boolean isShapeQuadr(Point[] p) {
-        if (isOnOneLine(p[0], p[2], p[1]) || isOnOneLine(p[0], p[2], p[3]) || isOnOneLine(p[1], p[3], p[0]) || isOnOneLine(p[1], p[3], p[2])) {
-            return false;
-        }
-        return true;
+        return (isOnOneLine(p[0], p[2], p[1]) || isOnOneLine(p[0], p[2], p[3]) || isOnOneLine(p[1], p[3], p[0]) || isOnOneLine(p[1], p[3], p[2]));
     }
 
     private boolean isOnOneLine(Point p1, Point p2, Point testP) {
         double xRes = (testP.getX() - p1.getX()) / (p2.getX() - p1.getX());
         double yRes = (testP.getY() - p1.getY()) / (p2.getY() - p1.getY());
-        return (xRes == yRes) ? true : false;
+        return xRes != yRes;
     }
 
     private boolean isAllDistEqual(double[] mass) {

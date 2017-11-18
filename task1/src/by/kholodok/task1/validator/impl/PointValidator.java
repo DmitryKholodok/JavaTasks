@@ -1,8 +1,8 @@
-package by.kholodok.task1.validation.impl;
+package by.kholodok.task1.validator.impl;
 
-import by.kholodok.task1.handler.impl.PointLineHandler;
-import by.kholodok.task1.handler.impl.QuadrLineHandler;
-import by.kholodok.task1.validation.Validator;
+import by.kholodok.task1.validator.handler.impl.PointLineHandler;
+import by.kholodok.task1.validator.handler.impl.QuadrLineHandler;
+import by.kholodok.task1.validator.Validator;
 import by.kholodok.task1.exception.ParamCountException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -31,8 +31,9 @@ public class PointValidator implements Validator {
     }
 
     private void checkParamCount(String[] params) throws ParamCountException {
-        if (params.length != 2)
+        if (params.length != 2) {
             throw new ParamCountException("Param count - " + params.length + ".");
+        }
     }
 
     private void checkNumberFormat(String x, String y) throws NumberFormatException {

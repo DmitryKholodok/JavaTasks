@@ -2,14 +2,14 @@ package by.kholodok.task1.parser.impl;
 
 import by.kholodok.task1.entity.Point;
 import by.kholodok.task1.entity.Entity;
-import by.kholodok.task1.handler.LineHandler;
-import by.kholodok.task1.handler.impl.PointLineHandler;
-import by.kholodok.task1.parser.Parser;
+import by.kholodok.task1.validator.handler.LineHandler;
+import by.kholodok.task1.validator.handler.impl.PointLineHandler;
+import by.kholodok.task1.parser.AbstractParser;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class PointParser implements Parser {
+public class PointParser implements AbstractParser {
 
     private static final Logger LOGGER = LogManager.getLogger(PointParser.class);
 
