@@ -1,0 +1,155 @@
+2017-10-17 20:47:14 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0, 1.0 is valid point.
+2017-10-17 20:47:14 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1z.0, 1.0 is not valid point.java.lang.NumberFormatException: For input string: "1z.0"
+2017-10-17 20:47:14 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1.0 is not valid point.by.kholodok.task1.exception.ParamCountException: Param count - 1.
+2017-10-17 20:47:14 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0, 1.0 is valid point.
+2017-10-17 20:47:14 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1.0, /1.0 is not valid point.java.lang.NumberFormatException: For input string: "/1.0"
+2017-10-17 20:47:15 INFO  [main] impl.QuadrDataReader (QuadrDataReader.java:26) - [[(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [[(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]]], [(1.0,/ 3.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1z.0, 4.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 7.0) (1.0, 1.0) (1.0,  1.0) (1.0, 1.0)], ]
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is valid quadrilateral. 
+2017-10-17 20:47:15 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)]
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,2.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,-1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.1 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,2.0) (1.0,-1.0) (1.0,1.1) (1.0,1.0) is valid quadrilateral. 
+2017-10-17 20:47:15 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]
+2017-10-17 20:47:15 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,/ 3.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-10-17 20:47:15 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1z.0,4.0 is not valid point.java.lang.NumberFormatException: For input string: "1z.0"
+2017-10-17 20:47:15 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1z.0,4.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.PointValidateException: Point (1z.0,4.0) is wrong
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,5.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0231,-1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,5.0) (1.0231,-1.0) (1.0,1.0) (1.0,1.0) is valid quadrilateral. 
+2017-10-17 20:47:15 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)]
+2017-10-17 20:47:15 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,7.0) (1.0,1.0) (1.0, 1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-10-17 20:47:15 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) -  is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 1.
+2017-10-17 20:47:15 INFO  [main] impl.QuadrDataReader (QuadrDataReader.java:26) - [[(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [[(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]]], [(1.0,/ 3.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1z.0, 4.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 7.0) (1.0, 1.0) (1.0,  1.0) (1.0, 1.0)], ]
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,3.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,3.0) (3.0,3.0) (3.0,1.0) is valid quadrilateral. 
+2017-10-17 20:47:15 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0) (1.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 3.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-10-17 20:47:15 ERROR [main] impl.PointValidator (PointValidator.java:22) - 3z.0,3.0 is not valid point.java.lang.NumberFormatException: For input string: "3z.0"
+2017-10-17 20:47:15 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0) (1.0,3.0) (3z.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.PointValidateException: Point (3z.0,3.0) is wrong
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,3.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,1.0 is valid point.
+2017-10-17 20:47:15 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,3.0) (3.0,3.0) (3.0,1.0) is valid quadrilateral. 
+2017-10-17 20:47:15 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0)  (1.0,3.0) (3.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-10-17 20:48:51 INFO  [main] impl.QuadrDataReader (QuadrDataReader.java:26) - [[(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [[(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]]], [(1.0,/ 3.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1z.0, 4.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 7.0) (1.0, 1.0) (1.0,  1.0) (1.0, 1.0)]]
+2017-10-17 21:10:46 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0, 1.0 is valid point.
+2017-10-17 21:10:47 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1z.0, 1.0 is not valid point.java.lang.NumberFormatException: For input string: "1z.0"
+2017-10-17 21:10:47 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1.0 is not valid point.by.kholodok.task1.exception.ParamCountException: Param count - 1.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0, 1.0 is valid point.
+2017-10-17 21:10:47 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1.0, /1.0 is not valid point.java.lang.NumberFormatException: For input string: "/1.0"
+2017-10-17 21:10:47 INFO  [main] impl.QuadrDataReader (QuadrDataReader.java:26) - [[(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [[(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]]], [(1.0,/ 3.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1z.0, 4.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 7.0) (1.0, 1.0) (1.0,  1.0) (1.0, 1.0)]]
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is valid quadrilateral. 
+2017-10-17 21:10:47 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)]
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,2.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,-1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.1 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,2.0) (1.0,-1.0) (1.0,1.1) (1.0,1.0) is valid quadrilateral. 
+2017-10-17 21:10:47 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]
+2017-10-17 21:10:47 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,/ 3.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-10-17 21:10:47 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1z.0,4.0 is not valid point.java.lang.NumberFormatException: For input string: "1z.0"
+2017-10-17 21:10:47 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1z.0,4.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.PointValidateException: Point (1z.0,4.0) is wrong
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,5.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0231,-1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,5.0) (1.0231,-1.0) (1.0,1.0) (1.0,1.0) is valid quadrilateral. 
+2017-10-17 21:10:47 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)]
+2017-10-17 21:10:47 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,7.0) (1.0,1.0) (1.0, 1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-10-17 21:10:47 INFO  [main] impl.QuadrDataReader (QuadrDataReader.java:26) - [[(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [[(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]]], [(1.0,/ 3.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1z.0, 4.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 7.0) (1.0, 1.0) (1.0,  1.0) (1.0, 1.0)]]
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,3.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,3.0) (3.0,3.0) (3.0,1.0) is valid quadrilateral. 
+2017-10-17 21:10:47 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0) (1.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 3.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-10-17 21:10:47 ERROR [main] impl.PointValidator (PointValidator.java:22) - 3z.0,3.0 is not valid point.java.lang.NumberFormatException: For input string: "3z.0"
+2017-10-17 21:10:47 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0) (1.0,3.0) (3z.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.PointValidateException: Point (3z.0,3.0) is wrong
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,3.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,1.0 is valid point.
+2017-10-17 21:10:47 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,3.0) (3.0,3.0) (3.0,1.0) is valid quadrilateral. 
+2017-10-17 21:10:47 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0)  (1.0,3.0) (3.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0, 1.0 is valid point.
+2017-11-09 01:06:59 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1z.0, 1.0 is not valid point.java.lang.NumberFormatException: For input string: "1z.0"
+2017-11-09 01:06:59 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1.0 is not valid point.by.kholodok.task1.exception.ParamCountException: Param count - 1.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0, 1.0 is valid point.
+2017-11-09 01:06:59 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1.0, /1.0 is not valid point.java.lang.NumberFormatException: For input string: "/1.0"
+2017-11-09 01:06:59 INFO  [main] impl.QuadrDataReader (QuadrDataReader.java:26) - [[(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [[(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]]], [(1.0,/ 3.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1z.0, 4.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 7.0) (1.0, 1.0) (1.0,  1.0) (1.0, 1.0)]]
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is valid quadrilateral. 
+2017-11-09 01:06:59 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)]
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,2.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,-1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.1 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,2.0) (1.0,-1.0) (1.0,1.1) (1.0,1.0) is valid quadrilateral. 
+2017-11-09 01:06:59 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]
+2017-11-09 01:06:59 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,/ 3.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-11-09 01:06:59 ERROR [main] impl.PointValidator (PointValidator.java:22) - 1z.0,4.0 is not valid point.java.lang.NumberFormatException: For input string: "1z.0"
+2017-11-09 01:06:59 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1z.0,4.0) (1.0,1.0) (1.0,1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.PointValidateException: Point (1z.0,4.0) is wrong
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,5.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0231,-1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,5.0) (1.0231,-1.0) (1.0,1.0) (1.0,1.0) is valid quadrilateral. 
+2017-11-09 01:06:59 INFO  [main] impl.QuadrCreator (QuadrCreator.java:31) - Was created a new entity - [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)]
+2017-11-09 01:06:59 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,7.0) (1.0,1.0) (1.0, 1.0) (1.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-11-09 01:06:59 INFO  [main] impl.QuadrDataReader (QuadrDataReader.java:26) - [[(1.0, 1.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [[(1.0, 2.0) (1.0, -1.0) (1.0, 1.1) (1.0, 1.0)]]], [(1.0,/ 3.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1z.0, 4.0) (1.0, 1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 5.0) (1.0231, -1.0) (1.0, 1.0) (1.0, 1.0)], [(1.0, 7.0) (1.0, 1.0) (1.0,  1.0) (1.0, 1.0)]]
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,3.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,3.0) (3.0,3.0) (3.0,1.0) is valid quadrilateral. 
+2017-11-09 01:06:59 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0) (1.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 3.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-11-09 01:06:59 ERROR [main] impl.PointValidator (PointValidator.java:22) - 3z.0,3.0 is not valid point.java.lang.NumberFormatException: For input string: "3z.0"
+2017-11-09 01:06:59 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0) (1.0,3.0) (3z.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.PointValidateException: Point (3z.0,3.0) is wrong
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 1.0,3.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,3.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.PointValidator (PointValidator.java:25) - 3.0,1.0 is valid point.
+2017-11-09 01:06:59 INFO  [main] impl.QuadrValidator (QuadrValidator.java:29) - (1.0,1.0) (1.0,3.0) (3.0,3.0) (3.0,1.0) is valid quadrilateral. 
+2017-11-09 01:06:59 ERROR [main] impl.QuadrValidator (QuadrValidator.java:26) - (1.0,1.0)  (1.0,3.0) (3.0,3.0) (3.0,1.0) is not valid quadrilateral. by.kholodok.task1.exception.ParamCountException: Param count - 5.
+2017-11-09 02:33:23 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:33:23 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:34:48 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:34:48 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:34:48 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
+2017-11-09 02:34:48 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
+2017-11-09 02:36:19 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:36:19 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:36:19 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
+2017-11-09 02:36:19 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
+2017-11-09 02:38:18 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:38:18 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:38:18 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
+2017-11-09 02:38:18 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
+2017-11-09 02:40:48 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:40:48 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(1.0, 1.0) (3.0, 5.0) (7.0, 7.0) (7.0, 1.0)] is not a quadrilateral!
+2017-11-09 02:40:48 ERROR [main] impl.SquareObserver (SquareObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
+2017-11-09 02:40:48 ERROR [main] impl.PerimeterObserver (PerimeterObserver.java:24) - by.kholodok.task1.exception.ShapeException: [(-2.0, -2.0) (1.0, 2.0) (1.0, -1.0) (5.0, 0.0)] is not a quadrilateral!
